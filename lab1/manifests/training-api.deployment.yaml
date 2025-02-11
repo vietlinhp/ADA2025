@@ -16,15 +16,15 @@ spec:
         app: training-api
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/ada2025-449714/labrepo/training-api:0.0.1 # Docker image name, that we pushed to GCR - use your project id, location, and repository
+      - image: us-central1-docker.pkg.dev/ada24-449918/labrepo/training-api:0.0.1 # Docker image name, that we pushed to GCR - use your project id, location, and repository
         name: training-api
         ports:
         - containerPort: 5000
           protocol: TCP
         env:
         - name: PROJECT_ID
-          value: ada2025-449714  # use your project id
+          value: ada24-449918  # use your project id
         - name: MODEL_REPO
-          value: ada2025_models # use your GCP bucket id
+          value: ada24_models # use your GCP bucket id
         - name: MODEL_NAME
           value: model.h5
