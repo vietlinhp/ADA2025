@@ -2,5 +2,5 @@
   "project_id": "ada24-449918",
   "data_bucket": "ada25_data",
   "trainset_filename": "training_set.csv",
-  "model_repo": "labrepo"
+  "model_repo": "ada25_models"
 }
