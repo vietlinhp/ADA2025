@@ -1,4 +1,5 @@
 flask
+nest-asyncio
 connexion[flask]
 connexion[uvicorn]
 sqlalchemy
