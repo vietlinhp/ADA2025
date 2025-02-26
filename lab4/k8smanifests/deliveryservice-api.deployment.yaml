@@ -16,7 +16,7 @@ spec:
         app: deliveryservice-api
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/ada2025-449714/labrepo/deliveryservice-bq-api:0.0.1 # Docker image name, that we pushed to Artifact registry - use your project id, location, etc
+      - image: us-central1-docker.pkg.dev/ada24-449918/labrepo/deliveryservice-bq-api:0.0.1 # Docker image name, that we pushed to Artifact registry - use your project id, location, etc
         name: deliveryservice-api
         imagePullPolicy: "Always"
         ports:
