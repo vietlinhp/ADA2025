@@ -48,10 +48,10 @@
           "host": [
             "YOUR_FUNCION_URL"
           ],
-          "disable_host_sanitize": false
+          "disable_host_sanitize": true
         }
       ]
     }
   ],
-  "timeout": "3000ms"
+  "timeout": "300ms"
 }
