@@ -46,7 +46,7 @@
             ]
           },
           "host": [
-            "https://YOUR_FUNCION_URL/diabetes-predictor-training-api/"
+            "YOUR_FUNCION_URL"
           ],
           "disable_host_sanitize": false
         }
