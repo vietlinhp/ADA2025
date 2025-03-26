@@ -46,7 +46,7 @@
             ]
           },
           "host": [
-            "https://us-central1-ada2024.cloudfunctions.net/diabetes-predictor-training-api/"
+            "https://YOUR_FUNCION_URL/diabetes-predictor-training-api/"
           ],
           "disable_host_sanitize": false
         }
