@@ -6,4 +6,4 @@ class WebsiteUser(HttpUser):
     
     @task
     def index(self):
-        self.client.get("http://34.69.29.227:8080/ordersinventories/Laptop/id1")     
+        self.client.get("http://34.69.157.236:8080/ordersinventories/Laptop/id1")
