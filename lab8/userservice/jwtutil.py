@@ -42,7 +42,8 @@ def decode_auth_token(auth_token):
     :return: integer|string
     """
     try:
-        payload = jwt.decode(auth_token, SECRET_KEY_VALUE, algorithms=["HS256"])
+        # HS256 does not use private/public keys - so, we can use verify_signature = false
+        payload = jwt.decode(auth_token, SECRET_KEY_VALUE, algorithms=["HS256"], options={"verify_signature": False})
         return payload['sub']
     except jwt.ExpiredSignatureError:
         return 'Signature expired. Please log in again.'
