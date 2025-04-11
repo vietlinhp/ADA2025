@@ -32,7 +32,7 @@ with models.DAG(
     download_from_gcs = GCSToLocalFilesystemOperator(
         task_id="download_from_gcs",
         object_name="sales.csv",
-        bucket="ada2025_data", # change this location
+        bucket="ada25_data", # change this location
         filename="local_sales.csv"
     )
 
@@ -41,7 +41,7 @@ with models.DAG(
 
     upload_to_gsc = LocalFilesystemToGCSOperator(
         task_id='upload_to_gsc',
-        bucket='ada2025_data',  # change this location
+        bucket='ada25_data',  # change this location
         src="{{ task_instance.xcom_pull(task_ids='transform_data') }}",
         # See https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/xcoms.html for Xcoms
         dst='sales_sum.csv'
