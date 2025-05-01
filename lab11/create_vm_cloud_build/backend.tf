@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "adatemp"
+    bucket = "ada2025_temp"  # change this to your bucket
     prefix = "env/dev"
   }
 }
