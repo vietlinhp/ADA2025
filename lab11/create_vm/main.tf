@@ -1,17 +1,17 @@
-resource "google_compute_network" "vpc_network" {
+resource "google_compute_network" "adavm_vpc_network" {
   name                    = "my-custom-mode-network"
   auto_create_subnetworks = false
   mtu                     = 1460
 }
 
-resource "google_compute_subnetwork" "default" {
+resource "google_compute_subnetwork" "adavm_subnet" {
   name          = "my-custom-subnet"
   ip_cidr_range = "10.0.1.0/24"
   region        = "us-west1"
-  network       = google_compute_network.vpc_network.id
+  network       = google_compute_network.adavm_vpc_network.id
 }
 # Create a single Compute Engine instance
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "adavm" {
   name         = "ada-vm"
   machine_type = "f1-micro"
   zone         = "us-west1-a"
@@ -28,7 +28,7 @@ resource "google_compute_instance" "default" {
 
 
   network_interface {
-    subnetwork = google_compute_subnetwork.default.id
+    subnetwork = google_compute_subnetwork.adavm_subnet.id
 
     access_config {
       # Include this section to give the VM an external IP address
@@ -36,22 +36,22 @@ resource "google_compute_instance" "default" {
   }
 }
 
-resource "google_compute_firewall" "ssh" {
+resource "google_compute_firewall" "ssh_port" {
   name = "allow-ssh"
   allow {
     ports    = ["22"]
     protocol = "tcp"
   }
   direction     = "INGRESS"
-  network       = google_compute_network.vpc_network.id
+  network       = google_compute_network.adavm_vpc_network.id
   priority      = 1000
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["ssh"]
 }
 
-resource "google_compute_firewall" "flask" {
+resource "google_compute_firewall" "flask_port" {
   name    = "flask-app-firewall"
-  network = google_compute_network.vpc_network.id
+  network = google_compute_network.adavm_vpc_network.id
 
   allow {
     protocol = "tcp"
