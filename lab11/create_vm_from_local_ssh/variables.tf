@@ -4,7 +4,7 @@ variable "project_id" {
 
 variable "ada_github_uri" {
   type = string
-  default = "https://github.com/IndikaKuma/ADA2024.git"
+  default = "https://github.com/IndikaKuma/ADA2025.git"
 }
 
 variable "gce_ssh_user" {

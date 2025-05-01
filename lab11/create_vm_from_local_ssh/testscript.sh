@@ -1,1 +1,1 @@
-git clone https://github.com/IndikaKuma/ADA2024.git
+git clone https://github.com/IndikaKuma/ADA2025.git
