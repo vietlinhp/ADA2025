@@ -7,7 +7,7 @@ steps:
       - |
         if [ -d "lab11/create_vm_cloud_build/" ]; then
           cd lab11/create_vm_cloud_build
-          terraform init -reconfigure -var project_id=YOUR_PROJECT_ID
+          terraform init -reconfigure -var project_id=ada24-449918
         else
           echo "***************************** SKIPPING Init ********************************"
           echo "*************** No Terraform Directory *****************"
@@ -21,7 +21,7 @@ steps:
       - |
         if [ -d "lab11/create_vm_cloud_build/" ]; then
           cd lab11/create_vm_cloud_build
-          terraform destroy -auto-approve -var project_id=YOUR_PROJECT_ID
+          terraform destroy -auto-approve -var project_id=ada24-449918
         else
           echo "***************************** SKIPPING Destroy ********************************"
           echo "*************** No Terraform Directory *****************"
